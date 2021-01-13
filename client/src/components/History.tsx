@@ -102,7 +102,7 @@ export default function History({ url }: { url: string }) {
 
   useEffect(() => {
     if (url) {
-      run(fetchApi("http://localhost:3000?url=" + url));
+      run(fetchApi(`http://localhost:${process.env.SERVER_PORT || 3000}?url=${url}`));
     }
   }, [url, run]);
 

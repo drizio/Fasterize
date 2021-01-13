@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from "cors"
@@ -8,7 +10,6 @@ import {isURL, Result, FSTRZFLAG} from "./utils/"
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
-const PORT= 3000
 
 
 app.get('/', async (req, res)=> {
@@ -43,8 +44,8 @@ app.get('/', async (req, res)=> {
     
 })
 
-app.listen(PORT, ()=> {
-    console.log(`[SERVER] running on ${PORT}`)
+app.listen(process.env.PORT, ()=> {
+    console.log(`[SERVER] running on ${process.env.PORT}`)
 })
 
 interface POPResponse {
