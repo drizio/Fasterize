@@ -72,3 +72,5 @@ const getPopCity = async (pop: string) => {
     }
    
 }
+
+export default app
